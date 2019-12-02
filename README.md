@@ -8,4 +8,4 @@
 
  user credentials are provided on logins screen but you may create a new account if you wish
 
- THe project could use better documentation however due to time constraints I've cut the dev off to make sure I'm not too late
+ The project could use better documentation however due to time constraints I've cut the dev off to make sure I'm not too late
