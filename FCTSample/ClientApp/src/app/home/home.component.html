@@ -1,0 +1,93 @@
+
+<h3>Product Listings</h3>
+<div>These are the products available for purchase.  To purchase the product click corresponding View link and follow directions.  You may sort by Price by clicking on the price column.</div>
+<hr style="height:1px solid gray" />
+<div style="width:80%;">
+  
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort style="padding-bottom: 10px;">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Product Id </th>
+    <td mat-cell *matCellDef="let element"> <a [routerLink]="['/product-detail',element.id]">[View]</a>  </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Product Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Product Description </th>
+    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+    <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+</table>
+<div style="min-height: 10px;margin-top:10px;"></div>
+<mat-paginator [pageSizeOptions]="[5, 10, 15]" [length]=5 [pageSize]=5 showFirstLastButtons></mat-paginator>
+
+</div>
+
+
+<h3>Product Purchases</h3>
+<div>These are the products you have purchased. To view the purchase click on the corresponding view link.  In there you'll have an ability to cancel the purchase. You may sort by Price by clicking on the price column.</div>
+<hr style="height:1px solid gray" />
+<div style="width:80%;">
+
+  <table mat-table [dataSource]="purchasesDataSource" class="mat-elevation-z8" matSort style="padding-bottom: 10px;">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Product Id </th>
+      <td mat-cell *matCellDef="let element"> <a [routerLink]="['/purchase-detail',element.id]">[View]</a>  </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Product Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Product Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+  </table>
+  <div style="min-height: 10px;margin-top:10px;"></div>
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" [length]=5 [pageSize]=5 showFirstLastButtons></mat-paginator>
+  
+  </div>
+
+  <div style="text-align:center;margin:0; padding: 20px;">
+    
+      <button class="btn btn-primary" style="width:200px;" (click)="Logout()">LOGOUT</button>
+  </div>

@@ -1,0 +1,14 @@
+<div class="card" style="width: 90%;">
+    <div class="card-header">
+      <b>Product Id:</b> {{product.id}}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><b>Product Name:</b> {{product.name}}</li>
+      <li class="list-group-item"><b>Price:</b> ${{product.price}}</li>
+      <li class="list-group-item" style="min-height: 300px;"><b>Description:</b> {{product.description}}</li>
+    </ul>
+  </div>
+  <div style="text-align:center;margin:0; padding: 20px;">
+    <button class="btn btn-primary" style="width:200px;" [routerLink]="['']">RETURN</button> &nbsp;
+      <button class="btn btn-primary" style="width:200px;" (click)="onClickMe()">PURCHASE PRODUCT</button>
+  </div>

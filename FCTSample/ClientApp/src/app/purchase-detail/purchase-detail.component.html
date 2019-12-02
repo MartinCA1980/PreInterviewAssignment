@@ -1,0 +1,17 @@
+<div style="padding:20px;">
+  These are details for your purchase for the following product:
+</div>
+<div class="card" style="width: 90%;">
+    <div class="card-header">
+      <b>Purchase Id:</b> {{purchase.id}}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><b>Product Name:</b> {{purchase.name}}</li>
+      <li class="list-group-item"><b>Price:</b> ${{purchase.price}}</li>
+      <li class="list-group-item" style="min-height: 300px;"><b>Description:</b> {{purchase.description}}</li>
+    </ul>
+  </div>
+  <div style="text-align:center;margin:0; padding: 20px;">
+    <button class="btn btn-primary" style="width:200px;" [routerLink]="['']">RETURN</button> &nbsp;
+      <button class="btn btn-primary" style="width:200px;" (click)="onClickMe()">CANCEL PURCHASE</button>
+  </div>
