@@ -38,9 +38,7 @@ export class HomeComponent {
   displayedColumnsPurchases: string[] = ['id', 'name', 'description', 'price'];
   purchasesDataSource = new MatTableDataSource<Product>();
   
-
-  //  @ViewChild(MatPaginator, { static:false}) paginator: MatPaginator;
-  //  @ViewChild(MatSort, {static:false}) sort: MatSort;
+  
   @ViewChildren(MatPaginator) paginator = new QueryList<MatPaginator>();
   @ViewChildren(MatSort) sort = new QueryList<MatSort>();
 
